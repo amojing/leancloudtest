@@ -22,7 +22,7 @@ def editobj(**params):
     TestObject = Object.extend('TestObject')
     from leancloud import Query
     query = Query(TestObject)
-    testObject = query.get('557fcfb7e4b0d02dc2e19e50')
+    testObject = query.get('557fd90ee4b0d02dc2e3e342')
     testObject.set('foo', 'edit')
     testObject.save()
 
