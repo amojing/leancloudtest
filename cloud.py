@@ -14,3 +14,15 @@ def hello(**params):
         return u'Hello, {}!'.format(params['name'])
     else:
         return 'Hello, LeanCloud!'
+
+
+@engine.define
+def editobj(**params):
+    from leancloud import Object
+    TestObject = Object.extend('TestObject')
+    from leancloud import Query
+    query = Query(TestObject)
+    testObject = query.get('557fcfb7e4b0d02dc2e19e50')
+    testObject.set('foo', 'edit')
+    testObject.save()
+
